@@ -1,0 +1,36 @@
+.logo {
+    /* height: 27px; */
+    text-align: center;
+    /* width: 164px; */
+    /* display: inline; */
+    color: white;
+    cursor: pointer;
+}
+
+.navbar {
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 21px;
+    position: relative;
+    /* margin: auto; */
+    
+    height: 62.5px;
+    /* justify-content: space-around;  */
+    text-decoration: none solid rgb(51, 51, 51);
+}
+
+.navtitle {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 17.5px;
+    text-decoration: none solid rgb(23, 23, 29);
+    text-align: left;
+    height: 62.5px;
+    width: 194.6px;
+    padding: 23px 23px 23px 23px;
+    position: relative;
+    display: inline-block;
+   color: #17171D;
+}
