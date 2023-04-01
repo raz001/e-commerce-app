@@ -1,0 +1,80 @@
+.community {
+    background-color: #f8f8f8;
+    padding: 3rem 0;
+  }
+  
+  .community h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+  }
+  
+  .community p {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    color: #777;
+  }
+  
+  .community__social-media {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+  
+  .community__social-media li {
+    list-style: none;
+    margin-right: 1rem;
+  }
+  
+  .community__social-media a {
+    font-size: 1.5rem;
+    color: #777;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .community__social-media a:hover {
+    color: #333;
+  }
+  
+  .community__cta {
+    text-align: center;
+  }
+  
+  .community__cta p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #777;
+  }
+  
+  .community__cta form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .community__cta input[type="email"] {
+    border: none;
+    border-radius: 2rem;
+    padding: 1rem;
+    font-size: 1rem;
+    width: 20rem;
+    margin-right: 1rem;
+  }
+  
+  .community__cta button[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 2rem;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .community__cta button[type="submit"]:hover {
+    background-color: #222;
+  }
+  

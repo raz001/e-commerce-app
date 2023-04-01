@@ -1,0 +1,312 @@
+{
+    "products": [
+      {
+        "id": 1,
+        "name": "Men's T-Shirt",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "price": 20.00,
+        "category": "men",
+        "image": "https://images.express.com/is/image/expressfashion/0022_04779555_2928?cache=on&wid=361&fmt=jpeg&qlt=75,1&resmode=sharp2&op_usm=1,1,5,0&defaultImage=Photo-Coming-Soon",
+        "inStock": true
+      },
+      {
+        "id": 2,
+        "name": "Women's Dress",
+        "description": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+        "price": 267.00,
+        "category": "women",
+        "image": "https://images.express.com/is/image/expressfashion/0078_06747018_1405_4_fb?cache=on&wid=361&fmt=jpeg&qlt=75,1&resmode=sharp2&op_usm=1,1,5,0&defaultImage=Photo-Coming-Soon",
+        "inStock": true
+      },
+      {
+        "id": 3,
+        "name": "Men's Jeans",
+        "description": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "price": 15.00,
+        "category": "kids",
+        "image": "https://images.express.com/is/image/expressfashion/0024_02847900_1726_f001?cache=on&wid=361&fmt=jpeg&qlt=75,1&resmode=sharp2&op_usm=1,1,5,0&defaultImage=Photo-Coming-Soon",
+        "inStock": true
+      },
+      {
+        "id": 4,
+        "name": "Men's Jeans",
+        "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "price": 30.00,
+        "category": "men",
+        "image": "https://images.express.com/is/image/expressfashion/0024_02847160_2834_f001?cache=on&wid=361&fmt=jpeg&qlt=75,1&resmode=sharp2&op_usm=1,1,5,0&defaultImage=Photo-Coming-Soon",
+        "inStock": true
+      },
+      {
+        "id": 5,
+        "name": "Men's Jeans",
+        "description": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "price": 40.00,
+        "category": "men",
+        "image": "https://images.express.com/is/image/expressfashion/0024_02847450_0001_f001?cache=on&wid=361&fmt=jpeg&qlt=75,1&resmode=sharp2&op_usm=1,1,5,0&defaultImage=Photo-Coming-Soon",
+        "inStock": true
+      },
+      {
+        "id": 6,
+        "name": "Men's Jeans",
+        "description": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "price": 25.00,
+        "category": "men",
+        "image": "https://images.express.com/is/image/expressfashion/0024_02847678_0019_f001?cache=on&wid=361&fmt=jpeg&qlt=75,1&resmode=sharp2&op_usm=1,1,5,0&defaultImage=Photo-Coming-Soon",
+        "inStock": false
+      },
+      {
+        "id": 7,
+        "name": "Men's T-Shirt",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "price": 60.00,
+        "category": "men",
+        "image": "https://images.express.com/is/image/expressfashion/0022_04779555_2096?cache=on&wid=361&fmt=jpeg&qlt=75,1&resmode=sharp2&op_usm=1,1,5,0&defaultImage=Photo-Coming-Soon",
+        "inStock": true
+      },
+      {
+        "id": 8,
+        "name": "Men's T-Shirt",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "price": 40.00,
+        "category": "men",
+        "image": "https://images.express.com/is/image/expressfashion/0022_04771287_0900_f001?cache=on&wid=361&fmt=jpeg&qlt=75,1&resmode=sharp2&op_usm=1,1,5,0&defaultImage=Photo-Coming-Soon",
+        "inStock": true
+      },
+      {
+        "id": 9,
+        "name": "Men's T-Shirt",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "price": 140.00,
+        "category": "men",
+        "image": "https://images.express.com/is/image/expressfashion/0022_04778101_0058_f001?cache=on&wid=361&fmt=jpeg&qlt=75,1&resmode=sharp2&op_usm=1,1,5,0&defaultImage=Photo-Coming-Soon",
+        "inStock": true
+      },
+      {
+        "id": 10,
+        "name": "Men's Shirt",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "price": 240.00,
+        "category": "men",
+        "image": "https://images.express.com/is/image/expressfashion/0020_01694306_0410_f001?cache=on&wid=361&fmt=jpeg&qlt=75,1&resmode=sharp2&op_usm=1,1,5,0&defaultImage=Photo-Coming-Soon",
+        "inStock": true
+      },
+      {
+        "id": 10,
+        "name": "Men's Shirt",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "price": 340.00,
+        "category": "men",
+        "image": "https://images.express.com/is/image/expressfashion/0020_01762769_0001_f001?cache=on&wid=361&fmt=jpeg&qlt=75,1&resmode=sharp2&op_usm=1,1,5,0&defaultImage=Photo-Coming-Soon",
+        "inStock": true
+      },
+      {
+        "id": 11,
+        "name": "Men's Shirt",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "price": 78.00,
+        "category": "men",
+        "image": "https://images.express.com/is/image/expressfashion/0020_01690223_1056_f001?cache=on&wid=361&fmt=jpeg&qlt=75,1&resmode=sharp2&op_usm=1,1,5,0&defaultImage=Photo-Coming-Soon",
+        "inStock": true
+      },
+      {
+        "id": 12,
+        "name": "Men's Shirt",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "price": 60.00,
+        "category": "men",
+        "image": "https://images.express.com/is/image/expressfashion/0020_01760567_1056_f001?cache=on&wid=361&fmt=jpeg&qlt=75,1&resmode=sharp2&op_usm=1,1,5,0&defaultImage=Photo-Coming-Soon",
+        "inStock": true
+      },
+      {
+        "id": 13,
+        "name": "Men's Shirt",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "price": 68.00,
+        "category": "men",
+        "image": "https://images.express.com/is/image/expressfashion/0020_06037465_0001_a001?cache=on&wid=361&fmt=jpeg&qlt=75,1&resmode=sharp2&op_usm=1,1,5,0&defaultImage=Photo-Coming-Soon",
+        "inStock": true
+      },
+      {
+        "id": 14,
+        "name": "Men's Shirt",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "price": 79.00,
+        "category": "men",
+        "image": "https://images.express.com/is/image/expressfashion/0020_01698385_2458_f001?cache=on&wid=361&fmt=jpeg&qlt=75,1&resmode=sharp2&op_usm=1,1,5,0&defaultImage=Photo-Coming-Soon",
+        "inStock": true
+      },
+      {
+        "id": 15,
+        "name": "Men's Shirt",
+        "description": "Geo Print Pocket Rayon Short Sleeve Shirt",
+        "price": 44.00,
+        "category": "men",
+        "image": "https://images.express.com/is/image/expressfashion/0020_01691280_2907_f001?cache=on&wid=361&fmt=jpeg&qlt=75,1&resmode=sharp2&op_usm=1,1,5,0&defaultImage=Photo-Coming-Soon",
+        "inStock": true
+      },
+      {
+        "id": 16,
+        "name": "Men's Shirt",
+        "description": "Striped Mini Geo Print Rayon Short Sleeve Shirt.",
+        "price": 49.00,
+        "category": "men",
+        "image": "https://images.express.com/is/image/expressfashion/0020_01690373_0410_f001?cache=on&wid=361&fmt=jpeg&qlt=75,1&resmode=sharp2&op_usm=1,1,5,0&defaultImage=Photo-Coming-Soon",
+        "inStock": true
+      },
+      {
+        "id": 17,
+        "name": "Women's Dress",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "price": 20.00,
+        "category": "Women",
+        "image": "https://images.express.com/is/image/expressfashion/0086_06418421_0680_f001?cache=on&wid=361&fmt=jpeg&qlt=75,1&resmode=sharp2&op_usm=1,1,5,0&defaultImage=Photo-Coming-Soon",
+        "inStock": true
+      },
+      {
+        "id": 18,
+        "name": "Women's Dress",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "price": 40.00,
+        "category": "Women",
+        "image": "https://images.express.com/is/image/expressfashion/0086_09610586_0121_f001?cache=on&wid=361&fmt=jpeg&qlt=75,1&resmode=sharp2&op_usm=1,1,5,0&defaultImage=Photo-Coming-Soon",
+        "inStock": true
+      },
+      {
+        "id": 19,
+        "name": "Women's Dress",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "price": 45.00,
+        "category": "Women",
+        "image": "https://images.express.com/is/image/expressfashion/0094_07827736_2919_f001?cache=on&wid=361&fmt=jpeg&qlt=75,1&resmode=sharp2&op_usm=1,1,5,0&defaultImage=Photo-Coming-Soon",
+        "inStock": true
+      },
+      {
+        "id": 20,
+        "name": "Women's Dress",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "price": 25.00,
+        "category": "Women",
+        "image": "https://images.express.com/is/image/expressfashion/0086_06340344_0058_f001?cache=on&wid=361&fmt=jpeg&qlt=75,1&resmode=sharp2&op_usm=1,1,5,0&defaultImage=Photo-Coming-Soon",
+        "inStock": true
+      },
+      {
+        "id": 21,
+        "name": "Women's Dress",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "price": 40.00,
+        "category": "Women",
+        "image": "https://images.express.com/is/image/expressfashion/0094_07827916_0058_f001?cache=on&wid=361&fmt=jpeg&qlt=75,1&resmode=sharp2&op_usm=1,1,5,0&defaultImage=Photo-Coming-Soon",
+        "inStock": true
+      },
+      {
+        "id": 22,
+        "name": "Women's Dress",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "price": 20.00,
+        "category": "Women",
+        "image": "https://images.express.com/is/image/expressfashion/0086_06507794_0552_f001?cache=on&wid=361&fmt=jpeg&qlt=75,1&resmode=sharp2&op_usm=1,1,5,0&defaultImage=Photo-Coming-Soon",
+        "inStock": true
+      },
+      {
+        "id": 23,
+        "name": "Women's Dress",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "price": 108.00,
+        "category": "Women",
+        "image": "https://images.express.com/is/image/expressfashion/0094_07818081_0058_f001?cache=on&wid=361&fmt=jpeg&qlt=75,1&resmode=sharp2&op_usm=1,1,5,0&defaultImage=Photo-Coming-Soon",
+        "inStock": true
+      },
+      {
+        "id": 24,
+        "name": "Women's Dress",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "price": 20.00,
+        "category": "Women",
+        "image": "https://images.express.com/is/image/expressfashion/0086_06419673_0001_f001?cache=on&wid=361&fmt=jpeg&qlt=75,1&resmode=sharp2&op_usm=1,1,5,0&defaultImage=Photo-Coming-Soon",
+        "inStock": true
+      },
+      {
+        "id": 25,
+        "name": "Women's Dress",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "price": 400.00,
+        "category": "Women",
+        "image": "https://images.express.com/is/image/expressfashion/0086_09618430_0001_f001?cache=on&wid=361&fmt=jpeg&qlt=75,1&resmode=sharp2&op_usm=1,1,5,0&defaultImage=Photo-Coming-Soon",
+        "inStock": true
+      },
+      {
+        "id": 26,
+        "name": "Women's Dress",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "price": 228.00,
+        "category": "Women",
+        "image": "https://images.express.com/is/image/expressfashion/0094_07837406_0058_f001?cache=on&wid=361&fmt=jpeg&qlt=75,1&resmode=sharp2&op_usm=1,1,5,0&defaultImage=Photo-Coming-Soon",
+        "inStock": true
+      },
+      {
+        "id": 27,
+        "name": "Women's Dress",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "price": 41.00,
+        "category": "Women",
+        "image": "https://images.express.com/is/image/expressfashion/0086_06410022_0058_f001?cache=on&wid=361&fmt=jpeg&qlt=75,1&resmode=sharp2&op_usm=1,1,5,0&defaultImage=Photo-Coming-Soon",
+        "inStock": true
+      },
+      {
+        "id": 28,
+        "name": "Women's Dress",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "price": 26.00,
+        "category": "Women",
+        "image": "https://images.express.com/is/image/expressfashion/0086_06410346_0058_f001?cache=on&wid=361&fmt=jpeg&qlt=75,1&resmode=sharp2&op_usm=1,1,5,0&defaultImage=Photo-Coming-Soon",
+        "inStock": true
+      },
+      {
+        "id": 29,
+        "name": "Women's Dress",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "price": 78.00,
+        "category": "Women",
+        "image": "https://images.express.com/is/image/expressfashion/0096_08263172_0001_f001?cache=on&wid=361&fmt=jpeg&qlt=75,1&resmode=sharp2&op_usm=1,1,5,0&defaultImage=Photo-Coming-Soon",
+        "inStock": true
+      },
+      {
+        "id": 30,
+        "name": "Women's Dress",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "price": 40.00,
+        "category": "Women",
+        "image": "https://images.express.com/is/image/expressfashion/0086_06410678_2910_f001?cache=on&wid=361&fmt=jpeg&qlt=75,1&resmode=sharp2&op_usm=1,1,5,0&defaultImage=Photo-Coming-Soon",
+        "inStock": true
+      },
+      {
+        "id": 31,
+        "name": "Women's Dress",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "price": 45.00,
+        "category": "Women",
+        "image": "https://images.express.com/is/image/expressfashion/0086_06410422_2917_f001?cache=on&wid=361&fmt=jpeg&qlt=75,1&resmode=sharp2&op_usm=1,1,5,0&defaultImage=Photo-Coming-Soon",
+        "inStock": true
+      },
+      {
+        "id": 32,
+        "name": "Women's Dress",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "price": 40.00,
+        "category": "Women",
+        "image": "https://images.express.com/is/image/expressfashion/0086_06410371_0017_f001?cache=on&wid=361&fmt=jpeg&qlt=75,1&resmode=sharp2&op_usm=1,1,5,0&defaultImage=Photo-Coming-Soon",
+        "inStock": true
+      },
+      {
+        "id": 33,
+        "name": "Women's Dress",
+        "description": "Body Contour Compression Floral Halter Rosette Thong Bodysuit.",
+        "price": 40.00,
+        "category": "Women",
+        "image": "https://images.express.com/is/image/expressfashion/0086_06410371_0017_f001?cache=on&wid=361&fmt=jpeg&qlt=75,1&resmode=sharp2&op_usm=1,1,5,0&defaultImage=Photo-Coming-Soon",
+        "inStock": true
+      }
+
+    ]
+  }
+  

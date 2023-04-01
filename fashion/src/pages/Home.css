@@ -36,7 +36,7 @@
     height: 632.936px;
     width: 253.188px;
     display: table-cell;
-    z-index: 1;
+    /* z-index: 1; */
 }
 
 #top2 {
@@ -80,7 +80,7 @@
     text-decoration: none solid rgb(51, 51, 51);
     text-align: center;
     height: 34px;
-    width: 476.388px;
+    /* width: 476.388px; */
     /* display: block; */
 }
 
@@ -113,7 +113,7 @@
     text-decoration: none solid rgb(51, 51, 51);
     text-align: center;
     height: 24.2px;
-    width: 476.388px;
+    /* width: 476.388px; */
     /* display: block; */
 }
 
@@ -125,7 +125,7 @@
     text-decoration: none solid rgb(51, 51, 51);
     text-align: center;
     height: 17.6px;
-    width: 100.162px;
+    /* width: 100.162px; */
     border-bottom: 2px solid black;
     margin: 0 3px 1px 3px;
     padding: 0 0 2px 0;
