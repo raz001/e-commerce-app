@@ -1,5 +1,5 @@
 import React from 'react';
-import './Product.css'
+import './ProductCard.css'
 const ProductCard = ({ product }) => {
   const { name, price, description, image, inStock } = product;
 
@@ -20,3 +20,5 @@ const ProductCard = ({ product }) => {
 };
 
 export default ProductCard;
+
+
