@@ -11,3 +11,21 @@ function App() {
 }
 
 export default App;
+// "categories": [
+//   {
+//     "id": "men",
+//     "name": "Men"
+//   },
+//   {
+//     "id": "women",
+//     "name": "Women"
+//   },
+//   {
+//     "id": "kids",
+//     "name": "Kids"
+//   },
+//   {
+//     "id": "accessories",
+//     "name": "Accessories"
+//   }
+// ]

@@ -1,4 +1,7 @@
 import "./Home.css"
+import Footer from "../components/Footer";
+import '../components/Footer.css'
+import CommunitySection from "./Community";
 function Home() {
     return (
         <>
@@ -25,9 +28,9 @@ function Home() {
             </div>
             <div id="top2">
             <div className="top2container">
-                    <img src="https://images.express.com/is/image/expressfashion/0024_02847517_2731_f001?cache=on&wid=361&fmt=jpeg&qlt=75,1&resmode=sharp2&op_usm=1,1,5,0&defaultImage=Photo-Coming-Soon" alt="img" />
+                    <img src="https://images.express.com/is/image/expressfashion/0020_01698312_1837_f001?cache=on&wid=361&fmt=jpeg&qlt=75,1&resmode=sharp2&op_usm=1,1,5,0&defaultImage=Photo-Coming-Soon" alt="img" />
                     <p>
-                        <span>Jeans</span>
+                        <span>Linen Shirts</span>
                     </p>
 
                     <div className='innerdiv'>
@@ -37,9 +40,9 @@ function Home() {
 
                 </div>
                 <div className="top2container">
-                    <img src="https://images.express.com/is/image/expressfashion/0020_01698312_1837_f001?cache=on&wid=361&fmt=jpeg&qlt=75,1&resmode=sharp2&op_usm=1,1,5,0&defaultImage=Photo-Coming-Soon" alt="img" />
+                    <img src="https://images.express.com/is/image/expressfashion/0024_02847517_2731_f001?cache=on&wid=361&fmt=jpeg&qlt=75,1&resmode=sharp2&op_usm=1,1,5,0&defaultImage=Photo-Coming-Soon" alt="img" />
                     <p>
-                        <span>Linen Shirts</span>
+                        <span>Jeans</span>
                     </p>
 
                     <div className='innerdiv'>
@@ -61,7 +64,10 @@ function Home() {
 
                 </div>
             </div>
+            <CommunitySection />
+            <Footer />
         </>
     )
 }
 export default Home;
+
