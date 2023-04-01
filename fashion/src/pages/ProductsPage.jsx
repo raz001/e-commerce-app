@@ -1,75 +1,119 @@
-import React, { useState, useEffect } from 'react';
-import ProductCard from './ProductCard';
-import './Product.css';
-const ProductsPage = () => {
-  // State for product data
-  const [products, setProducts] = useState([]);
-  const categories = ["All", "Men", "Women",];
-  const [selectedCategory, setSelectedCategory] = useState("");
-  const [selectedSorting, setSelectedSorting] = useState("");
 
-  const handleCategorySelect = (category) => {
-    setSelectedCategory(category);
-    if (category === "All") {
-      setProducts(products);
-    } else {
-      setProducts(products.filter((product) => product.category === category));
-    }
-  };
+import React, { useState, useEffect, useReducer } from "react";
+import ProductCard from "./ProductCard";
+import "./Product.css";
+import axios from 'axios';
+import { Spinner } from '@chakra-ui/react';
 
-  const handleSortingSelect = (sorting) => {
-    setSelectedSorting(sorting);
-    switch (sorting) {
-      case "low-to-high":
-        setProducts([...products].sort((a, b) => a.price - b.price));
-        break;
-      case "high-to-low":
-        setProducts([...products].sort((a, b) => b.price - a.price));
-        break;
-      default:
-        setProducts(products);
-        break;
+const initialState = {
+  data: [],
+  isLoading: false,
+  error: null,
+};
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case 'FETCH_REQUEST':
+      return {
+        ...state,
+        isLoading: true,
+        error: false
+      }
+    case 'FETCH_SUCCESS':
+      return {
+        ...state,
+        data: action.payload,
+        isLoading: false,
+        error: false
+      }
+    case 'FETCH_FAILURE':
+      return {
+        ...state,
+        data: [],
+        isLoading: false,
+        error: action.payload
+      }
+  }
+};
+const ProductPage = () => {
+  const [state, dispatch] = useReducer(reducer, initialState);
+  const { data, isLoading } = state;
+  let [order, setOrder] = useState("");
+  let [category, setCategory] = useState("");
+  const cost = 'price';
+  let getData;
+  if (category == 'all') {
+    category = ''
+  }
+  if (order === 'lowToHigh') {
+    order = 'asc'
+  } else {
+    order = 'desc'
+  }
+  if (category) {
+    getData = () => {
+      dispatch({ type: "FETCH_REQUEST" })
+      axios
+        .get(`http://localhost:3000/products?category=${category}&_sort=${cost}&_order=${order}`)
+        .then((res) => {
+          console.log(res);
+          dispatch({ type: "FETCH_SUCCESS", payload: res.data })
+
+        })
+
+        .catch((err) => {
+          console.log(err)
+          dispatch({ type: "FETCH_FAILURE", payload: err })
+        })
     }
-  };
-  // Fetch product data from API on component mount
+  } else {
+    getData = () => {
+      dispatch({ type: "FETCH_REQUEST" })
+      axios
+        .get(`http://localhost:3000/products?_sort=${cost}&_order=${order}`)
+        .then((res) => {
+          console.log(res);
+          dispatch({ type: "FETCH_SUCCESS", payload: res.data })
+        })
+
+        .catch((err) => {
+          console.log(err)
+          dispatch({ type: "FETCH_FAILURE", payload: err })
+        })
+    }
+  }
+
   useEffect(() => {
-    fetch('http://localhost:3000/products')
-      .then((response) => response.json())
-      .then((data) => setProducts(data))
-      .catch((error) => console.error(error));
-  }, [selectedCategory, selectedSorting]);
+    getData()
+  }, [category, order]);
+
+  if (isLoading) {
+    return <Spinner />
+  }
 
   return (
-    <div className="products-page">
-      <h2>Shop the Latest Trends</h2>
-      <div>
-        <label htmlFor="category-select">Filter by category:</label>
-        <select
-          id="category-select"
-          value={selectedCategory}
-          onChange={(e) => handleCategorySelect(e.target.value)}
-        >
-          {categories.map((category) => (
-            <option key={category} value={category}>
-              {category}
-            </option>
-          ))}
-        </select>
+    <div className="product-page">
+      <div className="filters">
+        <label>
+          Sort by:
+          <select value={order} onChange={(e) => setOrder(e.target.value)}>
+            <option value="">---</option>
+            <option value="lowToHigh">Price: Low to High</option>
+            <option value="highToLow">Price: High to Low</option>
+          </select>
+        </label>
+        <label>
+          Filter by category:
+          <select value={category} onChange={(e) => setCategory(e.target.value)}>
+            <option value="all">All categories</option>
+            <option value="men">Men</option>
+            <option value="Women">Women</option>
+
+          </select>
+        </label>
       </div>
-      <div>
-        <label htmlFor="sorting-select">Sort by price:</label>
-        <select
-          id="sorting-select"
-          value={selectedSorting}
-          onChange={(e) => handleSortingSelect(e.target.value)}
-        >
-          <option value="">None</option>
-          <option value="low-to-high">Low to high</option>
-          <option value="high-to-low">High to low</option>
-        </select>
-      </div>
-      <div className="product-cards">
-        {products.map((product) => (
+      <div className="product-grid">
+        {data.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
       </div>
@@ -77,4 +121,4 @@ const ProductsPage = () => {
   );
 };
 
-export default ProductsPage;
+export default ProductPage;
