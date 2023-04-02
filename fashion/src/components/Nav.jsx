@@ -3,16 +3,16 @@ import "./Nav.css"
 import { Link } from 'react-router-dom'
 import React from "react";
 import { FaShoppingCart } from "react-icons/fa";
-const links = [
-  { path: '/', title: "WOMEN" },
-  { path: '/men', title: "MEN" },
-  { path: '/', title: "JEANS" },
-  { path: '/', title: "ICONS" },
-  { path: '/', title: "SALE" },
-  { path: '/', title: "STYLE TRIAL RENTAL" },
-  { path: '/', title: "COMMUNITY" },
-  { path: '/', title: "LABELS WE LOVE" }
-];
+// const links = [
+//   { path: '/', title: "WOMEN" },
+//   { path: '/men', title: "MEN" },
+//   { path: '/', title: "JEANS" },
+//   { path: '/', title: "ICONS" },
+//   { path: '/', title: "SALE" },
+//   { path: '/', title: "STYLE TRIAL RENTAL" },
+//   { path: '/', title: "COMMUNITY" },
+//   { path: '/', title: "LABELS WE LOVE" }
+// ];
 function Nav(props) {
 //   return (
 //     <div>

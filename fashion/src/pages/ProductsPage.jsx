@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect, useReducer } from "react";
 import ProductCard from "./ProductCard";
-import "./Product.css";
+import "./ProductPage.css";
 import axios from 'axios';
 import { Spinner } from '@chakra-ui/react';
 
@@ -33,16 +33,40 @@ const reducer = (state, action) => {
         isLoading: false,
         error: action.payload
       }
+      default: {
+        throw new Error('Inavalid action')
+      }
   }
+  
 };
-const ProductPage = () => {
+const ProductPage = ({selectedProducts, setSelectedProducts}) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const { data, isLoading } = state;
+  // const [selectedProducts, setSelectedProducts] = useState([]);
+
   let [order, setOrder] = useState("");
   let [category, setCategory] = useState("");
   const cost = 'price';
+
+  // const handleAddToCart = (product) => {
+  //   setSelectedProducts((prevSelectedProducts) => [...prevSelectedProducts, product]);
+  // };
+  
+  const handleAddToCart = (product) => {
+    const existingItem = selectedProducts.find((item) => item.product.id === product.id);
+    if (existingItem) {
+      setSelectedProducts(
+        selectedProducts.map((item) =>
+          item.product.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+        )
+      );
+    } else {
+      setSelectedProducts([...selectedProducts, {product, quantity: 1} ]);
+    }
+  };
+
   let getData;
-  if (category == 'all') {
+  if (category === 'all') {
     category = ''
   }
   if (order === 'lowToHigh') {
@@ -54,7 +78,7 @@ const ProductPage = () => {
     getData = () => {
       dispatch({ type: "FETCH_REQUEST" })
       axios
-        .get(`http://localhost:3000/products?category=${category}&_sort=${cost}&_order=${order}`)
+        .get(`http://localhost:4000/products?category=${category}&_sort=${cost}&_order=${order}`)
         .then((res) => {
           console.log(res);
           dispatch({ type: "FETCH_SUCCESS", payload: res.data })
@@ -70,7 +94,7 @@ const ProductPage = () => {
     getData = () => {
       dispatch({ type: "FETCH_REQUEST" })
       axios
-        .get(`http://localhost:3000/products?_sort=${cost}&_order=${order}`)
+        .get(`http://localhost:4000/products?_sort=${cost}&_order=${order}`)
         .then((res) => {
           console.log(res);
           dispatch({ type: "FETCH_SUCCESS", payload: res.data })
@@ -114,9 +138,10 @@ const ProductPage = () => {
       </div>
       <div className="product-grid">
         {data.map((product) => (
-          <ProductCard key={product.id} product={product} />
+          <ProductCard key={product.id} product={product} onAddToCart={handleAddToCart} />
         ))}
       </div>
+      
     </div>
   );
 };

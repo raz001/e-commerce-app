@@ -9,8 +9,8 @@ function Home() {
                 <div>
                     <img src="https://www.express.com/content/dam/express/2023/projects/web/site-experiences/03-march/0306-digital-23891-icons-lp-update/mm-l-dt.jpg" alt="img" />
                 </div>
-                <div id="topmid">
-                    {/* <div>
+                {/* <div id="topmid">
+                    <div>
                         <p>
                             <span>WOMEN</span>
                         </p>
@@ -19,8 +19,8 @@ function Home() {
                         <p>DRESS PANTS</p>
                         <p>BODY CONTOUR</p>
                         <p>24/7 TOPS</p>
-                    </div> */}
-                </div>
+                    </div>
+                </div> */}
                 <div>
                     <img src="https://www.express.com/content/dam/express/2023/projects/web/site-experiences/02-february/0130-digital-21831-icons-lp/dt/mm-r-dt.jpg" alt="img" />
                 </div>
