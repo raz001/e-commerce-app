@@ -7,6 +7,8 @@ import Home from './pages/Home';
 import ProductPage from './pages/ProductsPage';
 import CartPage from './pages/CartPage'; 
 import Checkout from './pages/Checkout';
+import RegistrationPage from './pages/Register';
+import LoginPage from './pages/Login';
 function App() {
   const [selectedProducts, setSelectedProducts] = useState([]);
 
@@ -25,6 +27,8 @@ function App() {
           element={<CartPage key={Math.random()} selectedProducts={selectedProducts} />}
         />
         <Route path='/checkout' element={<Checkout />} />
+        <Route path='/account' element={<RegistrationPage />} />
+        <Route path='/login' element = {<LoginPage />}/>
       </Routes>
     </div>
     </>
