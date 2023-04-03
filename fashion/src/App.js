@@ -6,6 +6,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from './pages/Home';
 import ProductPage from './pages/ProductsPage';
 import CartPage from './pages/CartPage'; 
+import Checkout from './pages/Checkout';
 function App() {
   const [selectedProducts, setSelectedProducts] = useState([]);
 
@@ -23,6 +24,7 @@ function App() {
           path="/cart"
           element={<CartPage key={Math.random()} selectedProducts={selectedProducts} />}
         />
+        <Route path='/checkout' element={<Checkout />} />
       </Routes>
     </div>
     </>

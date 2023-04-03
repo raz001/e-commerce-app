@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import './CartPage.css'
 const CartPage = ({ selectedProducts }) => {
     const [cartItems, setCartItems] = useState([]);
@@ -69,7 +70,17 @@ const CartPage = ({ selectedProducts }) => {
                     <span>Subtotal:</span>
                     <span>{`$${subtotal?.toFixed(2)}`}</span>
                 </div>
-                <button className="checkout">Checkout</button>
+                {
+                    cartItems.length > 0 ? (
+                        <Link to='/checkout'>
+                            <button className="checkout">Checkout</button>
+                        </Link>
+                    ) : null
+
+                }
+
+
+
             </div>
 
         </div>
