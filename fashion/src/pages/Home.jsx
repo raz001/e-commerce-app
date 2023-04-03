@@ -8,18 +8,7 @@ function Home() {
                 <div>
                     <img src="https://www.express.com/content/dam/express/2023/projects/web/site-experiences/03-march/0306-digital-23891-icons-lp-update/mm-l-dt.jpg" alt="img" />
                 </div>
-                {/* <div id="topmid">
-                    <div>
-                        <p>
-                            <span>WOMEN</span>
-                        </p>
-
-                        <p>PORTOFINO SHIRTS</p>
-                        <p>DRESS PANTS</p>
-                        <p>BODY CONTOUR</p>
-                        <p>24/7 TOPS</p>
-                    </div>
-                </div> */}
+            
                 <div>
                     <img src="https://www.express.com/content/dam/express/2023/projects/web/site-experiences/02-february/0130-digital-21831-icons-lp/dt/mm-r-dt.jpg" alt="img" />
                 </div>
@@ -63,6 +52,27 @@ function Home() {
 
                 </div>
             </div>
+            <div className="home-container">
+  <div className="home-item">
+    <img src="https://www.express.com/content/dam/express/2023/projects/web/site-experiences/02-february/0213-digital-23077-style-editor-lp/dt/tan-3col-dt.jpg" alt="Product 1" />
+    <h3>New in Men's</h3>
+    <p>$19.99</p>
+    {/* <button>Shop Now</button> */}
+  </div>
+  <div className="home-item">
+    <img src="https://edge.curalate.com/v1/img/v6ejzeKC6n_8e0HIv0cPIwBFFA50oDxyHME6ARC2eh8=/sc/450x450?spatialTags=0.5261205434799194:0.36403822898864746&typ=webp" alt="Product 2" />
+    <h3>New in Women's</h3>
+    <p>$29.99</p>
+    {/* <button>Shop Now</button> */}
+  </div>
+  <div className="home-item">
+    <img src="https://images.express.com/is/image/expressfashion/0378_80154186_3013_a001?cache=on&wid=361&fmt=jpeg&qlt=75,1&resmode=sharp2&op_usm=1,1,5,0&defaultImage=Photo-Coming-Soon" alt="Product 3" />
+    <h3>Stylish wears</h3>
+     <p>$39.99</p>
+    {/* <button>Shop Now</button> */}
+  </div>
+</div>
+
             <CommunitySection />
             <Footer />
         </>
