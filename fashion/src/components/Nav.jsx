@@ -3,41 +3,8 @@ import "./Nav.css"
 import { Link } from 'react-router-dom'
 import React from "react";
 import { FaShoppingCart } from "react-icons/fa";
-// const links = [
-//   { path: '/', title: "WOMEN" },
-//   { path: '/men', title: "MEN" },
-//   { path: '/', title: "JEANS" },
-//   { path: '/', title: "ICONS" },
-//   { path: '/', title: "SALE" },
-//   { path: '/', title: "STYLE TRIAL RENTAL" },
-//   { path: '/', title: "COMMUNITY" },
-//   { path: '/', title: "LABELS WE LOVE" }
-// ];
 function Nav(props) {
-//   return (
-//     <div>
-//       <nav class="navbar">
-//   <a href="/" class="navbar__logo">Fashion Frenzy</a>
-//   <div class="navbar__links">
-//     <a href="/" class="navbar__link">Home</a>
-//     <a href="/products" class="navbar__link">Products</a>
-//     <a href="/cart" class="navbar__link navbar__link--cart">
-//       <i class="fas fa-shopping-cart"></i>
-//       <span class="navbar__cart-count">0</span>
-//     </a>
-//     <a href="/account" class="navbar__link">My Account</a>
-//   </div>
-// </nav>
 
-
-
-//       <nav className='navbar'>
-//         {links.map((link) => (
-//           <Link className="navtitle" key={link.title} to={link.path}>{link.title}</Link>
-//         ))}
-//       </nav>
-//     </div>
-//   )
 const { cartItemsCount } = props;
 
   return (
@@ -60,12 +27,6 @@ const { cartItemsCount } = props;
           My Account
         </Link>
       </div>
-
-           {/* <nav className='navbar1'>
-    {links.map((link) => (
-          <Link className="navtitle" key={link.title} to={link.path}>{link.title}</Link>
-        ))}
-     </nav> */}
     </nav>
   );
 }

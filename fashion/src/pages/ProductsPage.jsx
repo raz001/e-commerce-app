@@ -51,7 +51,7 @@ const ProductPage = ({selectedProducts, setSelectedProducts}) => {
   // const handleAddToCart = (product) => {
   //   setSelectedProducts((prevSelectedProducts) => [...prevSelectedProducts, product]);
   // };
-  
+
   const handleAddToCart = (product) => {
     const existingItem = selectedProducts.find((item) => item.product.id === product.id);
     if (existingItem) {
@@ -141,7 +141,6 @@ const ProductPage = ({selectedProducts, setSelectedProducts}) => {
           <ProductCard key={product.id} product={product} onAddToCart={handleAddToCart} />
         ))}
       </div>
-      
     </div>
   );
 };

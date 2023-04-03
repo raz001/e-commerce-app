@@ -1,6 +1,5 @@
 import "./Home.css"
 import Footer from "../components/Footer";
-import '../components/Footer.css'
 import CommunitySection from "./Community";
 function Home() {
     return (
