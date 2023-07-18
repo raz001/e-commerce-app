@@ -1,6 +1,7 @@
 /* Styles for ProductsPage component */
 .products-page {
   padding: 2rem;
+
 }
 
 .product-cards {
@@ -21,6 +22,7 @@
 .filters {
   display: flex;
   justify-content: space-between;
+  margin-top: 60px;
   margin-bottom: 1rem;
   width: 100%;
   max-width: 600px;

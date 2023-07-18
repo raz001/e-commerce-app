@@ -190,16 +190,19 @@
   }
   
   .my-bag {
+    margin-top: 60px;
     flex-basis: 65%;
     margin-right: 40px;
   }
   
   .bag-summary {
     background-color: #f8f8f8;
+    margin-top: 60px;
     border: 1px solid #ccc;
     border-radius: 4px;
     flex-basis: 30%;
     padding: 20px;
+    height: 60px;
   }
   
    h2 {

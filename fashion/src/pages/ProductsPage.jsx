@@ -33,13 +33,13 @@ const reducer = (state, action) => {
         isLoading: false,
         error: action.payload
       }
-      default: {
-        throw new Error('Inavalid action')
-      }
+    default: {
+      throw new Error('Inavalid action')
+    }
   }
-  
+
 };
-const ProductPage = ({selectedProducts, setSelectedProducts}) => {
+const ProductPage = ({ selectedProducts, setSelectedProducts }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const { data, isLoading } = state;
   // const [selectedProducts, setSelectedProducts] = useState([]);
@@ -61,24 +61,18 @@ const ProductPage = ({selectedProducts, setSelectedProducts}) => {
         )
       );
     } else {
-      setSelectedProducts([...selectedProducts, {product, quantity: 1} ]);
+      setSelectedProducts([...selectedProducts, { product, quantity: 1 }]);
     }
   };
 
   let getData;
-  if (category === 'all') {
-    category = ''
-  }
-  if (order === 'lowToHigh') {
-    order = 'asc'
-  } else {
-    order = 'desc'
-  }
+
   if (category) {
+
     getData = () => {
       dispatch({ type: "FETCH_REQUEST" })
       axios
-        .get(`http://localhost:4000/products?category=${category}&_sort=${cost}&_order=${order}`)
+        .get(`https://clothings.onrender.com/products?category=${category}&_sort=${cost}&_order=${order}`)
         .then((res) => {
           console.log(res);
           dispatch({ type: "FETCH_SUCCESS", payload: res.data })
@@ -94,7 +88,7 @@ const ProductPage = ({selectedProducts, setSelectedProducts}) => {
     getData = () => {
       dispatch({ type: "FETCH_REQUEST" })
       axios
-        .get(`http://localhost:4000/products?_sort=${cost}&_order=${order}`)
+        .get(`https://clothings.onrender.com/products?_sort=${cost}&_order=${order}`)
         .then((res) => {
           console.log(res);
           dispatch({ type: "FETCH_SUCCESS", payload: res.data })
@@ -121,9 +115,9 @@ const ProductPage = ({selectedProducts, setSelectedProducts}) => {
         <label>
           Sort by:
           <select value={order} onChange={(e) => setOrder(e.target.value)}>
-            <option value="">---</option>
-            <option value="lowToHigh">Price: Low to High</option>
-            <option value="highToLow">Price: High to Low</option>
+            <option value="">Sort by Price</option>
+            <option value="asc">Price: Low to High</option>
+            <option value="desc">Price: High to Low</option>
           </select>
         </label>
         <label>

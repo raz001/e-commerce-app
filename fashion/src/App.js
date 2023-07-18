@@ -14,7 +14,7 @@ function App() {
 
   return (
     <>
-    <Nav />
+    <Nav selectedProducts={selectedProducts} setSelectedProducts={setSelectedProducts} />
     <div>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -24,7 +24,7 @@ function App() {
         />
         <Route
           path="/cart"
-          element={<CartPage key={Math.random()} selectedProducts={selectedProducts} />}
+          element={<CartPage key={Math.random()} selectedProducts={selectedProducts} setSelectedProducts={setSelectedProducts} />}
         />
         <Route path='/checkout' element={<Checkout />} />
         <Route path='/account' element={<RegistrationPage />} />

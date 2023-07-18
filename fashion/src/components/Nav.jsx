@@ -5,7 +5,7 @@ import React from "react";
 import { FaShoppingCart } from "react-icons/fa";
 function Nav(props) {
 
-const { cartItemsCount } = props;
+const { selectedProducts } = props;
 
   return (
     <nav className="navbar">
@@ -21,7 +21,7 @@ const { cartItemsCount } = props;
         </Link>
         <Link to="/cart" className="navbar__link navbar__link--cart">
           <FaShoppingCart />
-          <span className="navbar__cart-count">{cartItemsCount}</span>
+          <span className="navbar__cart-count">{selectedProducts.length}</span>
         </Link>
         <Link to="/account" className="navbar__link">
           My Account

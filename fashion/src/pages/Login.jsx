@@ -16,6 +16,7 @@ const LoginPage = () => {
       if (storedCredentials && storedCredentials.username === credentials.username && storedCredentials.password === credentials.password) {
         setError('');
         setLogin(true)
+        alert("Login Successful!")
       } else {
         setError('Invalid username or password');
       }

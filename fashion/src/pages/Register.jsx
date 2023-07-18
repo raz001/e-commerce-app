@@ -16,10 +16,16 @@ const RegistrationPage = () => {
         event.preventDefault();
         const storedCredentials = JSON.parse(localStorage.getItem('credentials'));
         if (storedCredentials && storedCredentials.username === credentials.username) {
-            setError('Username already taken');
+            setError('Username already taken, Please Login');
         } else {
-            localStorage.setItem('credentials', JSON.stringify(credentials));
-           setRegister(true)
+            if(credentials.username === "" || credentials.password === ""){
+                setError('Please enter asked details');
+            } else {
+                localStorage.setItem('credentials', JSON.stringify(credentials));
+                setRegister(true)
+                alert("Registration Successful")
+            }
+          
         }
     };
  if(register){
