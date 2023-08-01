@@ -35,10 +35,10 @@ Fashion Frenzy is an e-commerce website that offers a wide range of trendy cloth
 <img src="https://github.com/raz001/e-commerce-app/assets/113996716/8c5cdd7c-90e1-44c1-baaf-04b2413639c7"/>
 
 
-**Register/Login:** Users can easily create an account by registering or log in to their existing accounts. This ensures a secure and tailored shopping experience for each user.
+**Register/Login:** Users can easily create an account by registering or login to their existing accounts. This ensures a secure and tailored shopping experience for each user.
 
 
-**Product Page:** The product page presents a diverse collection of clothing items for both men and women. It allows users to browse through a wide range of products, view detailed product information, filter products by category and sort by price.
+**Product Page:** The product page presents a diverse collection of clothing items for both men and women. It allows users to browse through a wide range of products, view product information, filter products by category, and sort by price.
 <img src="https://github.com/raz001/e-commerce-app/assets/113996716/12241ac0-a146-4cee-9281-5f57fad248ba"/>
 
 
