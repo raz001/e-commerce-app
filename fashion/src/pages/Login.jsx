@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { Navigate } from "react-router-dom";
 import './Login.css'
-const LoginPage = () => {
+const LoginPage = ({onLogin}) => {
     const [credentials, setCredentials] = useState({ username: '', password: '' });
     const [error, setError] = useState('');
-   const [login, setLogin] = useState(false)
+   const [login, setLogin] = useState(false);
+
     const handleInputChange = (event) => {
       const { name, value } = event.target;
       setCredentials({ ...credentials, [name]: value });
@@ -17,6 +18,7 @@ const LoginPage = () => {
         setError('');
         setLogin(true)
         alert("Login Successful!")
+        onLogin(storedCredentials.username)
       } else {
         setError('Invalid username or password');
       }

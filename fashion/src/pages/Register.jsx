@@ -48,6 +48,9 @@ const RegistrationPage = () => {
             </form>
         </div>
     );
+
+   
+        
 };
 
 

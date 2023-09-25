@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import './CartPage.css'
 const CartPage = ({ selectedProducts, setSelectedProducts }) => {
     const [cartItems, setCartItems] = useState([]);
@@ -7,9 +6,7 @@ const CartPage = ({ selectedProducts, setSelectedProducts }) => {
     console.log("selectedProducts is", selectedProducts);
 
     useEffect(() => {
-
         setCartItems(selectedProducts);
-
     }, [selectedProducts]);
 
     const incrementQuantity = (id) => {
@@ -41,7 +38,6 @@ const CartPage = ({ selectedProducts, setSelectedProducts }) => {
     };
 
     const subtotal = cartItems.length > 0 ? cartItems.reduce((acc, item) => acc + item.product.price * item.quantity, 0) : 0;
-
 
     return (
         <div className="cart-page">
@@ -81,9 +77,6 @@ const CartPage = ({ selectedProducts, setSelectedProducts }) => {
                     ) : null
 
                 } */}
-
-
-
             </div>
 
         </div>
