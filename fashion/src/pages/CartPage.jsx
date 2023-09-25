@@ -8,6 +8,7 @@ const CartPage = ({ selectedProducts, setSelectedProducts }) => {
     useEffect(() => {
         setCartItems(selectedProducts);
     }, [selectedProducts]);
+ 
 
     const incrementQuantity = (id) => {
         const updatedCartItems = cartItems.map((item) => {

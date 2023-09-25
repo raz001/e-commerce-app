@@ -1,12 +1,12 @@
-//import logo from '../logo.png'
+
 import "./Nav.css"
 import { Link } from 'react-router-dom'
 import React from "react";
 import { FaShoppingCart } from "react-icons/fa";
 import { MdAccountCircle } from 'react-icons/md';
-
+import LogoutModal from "./LogoutModal";
 function Nav(props) {
-  const { selectedProducts, user } = props;
+  const { selectedProducts, user, setUser } = props;
   return (
     <nav className="navbar">
       <Link to="/" className="navbar__logo">
@@ -27,6 +27,11 @@ function Nav(props) {
           <MdAccountCircle style={{ display: "inline", fontSize: '25px' }} /> {user ? user : "My Account"}
 
         </Link>
+        {
+          user ? <LogoutModal setUser = {setUser}/>
+            : ''
+        }
+      
       </div>
     </nav>
   );

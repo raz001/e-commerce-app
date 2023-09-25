@@ -15,7 +15,7 @@ const ProductCard = ({ product, onAddToCart }) => {
           <span className="price">{`$${price.toFixed(2)}`}</span>
           {inStock ? <span className="stock">In Stock</span> : <span className="out-of-stock">Out of Stock</span>}
         </div>
-        <button className="add-to-cart" onClick={ handleClick}>Add to Cart</button>
+        <button className="add-to-cart" onClick={handleClick}>Add to Cart</button>
       </div>
     </div>
   );

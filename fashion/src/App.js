@@ -22,7 +22,7 @@ function App() {
   
   return (
     <>
-      <Nav selectedProducts={selectedProducts} setSelectedProducts={setSelectedProducts} user = {user} />
+      <Nav selectedProducts={selectedProducts} setSelectedProducts={setSelectedProducts} user = {user} setUser={setUser} />
       <div>
         <Routes>
           <Route path="/" element={<Home />} />
