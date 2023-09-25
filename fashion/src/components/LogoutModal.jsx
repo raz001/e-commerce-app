@@ -40,7 +40,7 @@ export default function LogoutModal({setUser}) {
                         <Button colorScheme='blue' mr={3} onClick={onClose}>
                             Close
                         </Button>
-                        <Button onClick={handleLogout}>Yes, logout</Button>
+                        <Button onClick={handleLogout}>Yes, Logout</Button>
                     </ModalFooter>
                 </ModalContent>
             </Modal>
