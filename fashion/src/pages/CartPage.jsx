@@ -1,14 +1,17 @@
-import React, { useState, useEffect } from "react";
-import './CartPage.css'
+import React, { useState, useEffect, useContext } from "react";
+import './CartPage.css';
+import { AuthContext } from "../components/AuthContext";
+
+
 const CartPage = ({ selectedProducts, setSelectedProducts }) => {
     const [cartItems, setCartItems] = useState([]);
-    console.log('cartitems is', cartItems);
-    console.log("selectedProducts is", selectedProducts);
-
+    // console.log('cartitems is', cartItems);
+    // console.log("selectedProducts is", selectedProducts);
+    // const {isAuth} = useContext(AuthContext);
+    // console.log(isAuth)
     useEffect(() => {
         setCartItems(selectedProducts);
     }, [selectedProducts]);
- 
 
     const incrementQuantity = (id) => {
         const updatedCartItems = cartItems.map((item) => {
@@ -44,25 +47,27 @@ const CartPage = ({ selectedProducts, setSelectedProducts }) => {
         <div className="cart-page">
             <div className="my-bag">
                 <h2>My Bag</h2>
-                {cartItems?.map((item) => (
-                    <div key={item.id} className="cart-item">
-                        <div className="item-image">
-                            <img src={item.product.image} alt={item.product.name} />
+                {
+                    cartItems.length ? cartItems.map((item) => (
+                        <div key={item.id} className="cart-item">
+                            <div className="item-image">
+                                <img src={item.product.image} alt={item.product.name} />
+                            </div>
+                            <div className="item-info">
+                                <h3>{item.product.name}</h3>
+                                <p>{`$${item.product.price.toFixed(2)} x ${item.quantity}`}</p>
+                            </div>
+                            <div className="quantity">
+                                <button onClick={() => decrementQuantity(item.product.id)}>-</button>
+                                <span>{item.quantity}</span>
+                                <button onClick={() => incrementQuantity(item.product.id)}>+</button>
+                            </div>
+                            <button className="remove" onClick={() => removeItem(item.product.id)}>
+                                Remove
+                            </button>
                         </div>
-                        <div className="item-info">
-                            <h3>{item.product.name}</h3>
-                            <p>{`$${item.product.price.toFixed(2)} x ${item.quantity}`}</p>
-                        </div>
-                        <div className="quantity">
-                            <button onClick={() => decrementQuantity(item.product.id)}>-</button>
-                            <span>{item.quantity}</span>
-                            <button onClick={() => incrementQuantity(item.product.id)}>+</button>
-                        </div>
-                        <button className="remove" onClick={() => removeItem(item.product.id)}>
-                            Remove
-                        </button>
-                    </div>
-                ))}
+                    )) : <h2>Your cart is empty!</h2>
+                }
             </div>
             <div className="bag-summary">
                 <h2>Bag Summary</h2>

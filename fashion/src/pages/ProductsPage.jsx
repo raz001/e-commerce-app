@@ -47,26 +47,27 @@ const ProductPage = ({ selectedProducts, setSelectedProducts }) => {
   const initOrder = searchParams.get('order')
   let [order, setOrder] = useState(initOrder || '');
   let [category, setCategory] = useState(initCategory || []);
-const location  = useLocation()
+  const location = useLocation()
   const obj = {
-    params:{
+    params: {
       category: searchParams.getAll('category'),
       _sort: searchParams.get('order') && "price",
       _order: searchParams.get('order')
     }
   };
-  
-useEffect(() => {
-  getData(obj)
-}, [location.search]);
 
- useEffect(() => {
-  let params = {
-    category,
-  }
-  order && (params.order = order)
-  setSearchParams(params);
-}, [category, order]);
+  useEffect(() => {
+    getData(obj)
+  }, [location.search]);
+
+  useEffect(() => {
+    let params = {
+      category,
+    }
+    order && (params.order = order);
+    if (category === '') delete params.category
+    setSearchParams(params);
+  }, [category, order]);
 
   const handleAddToCart = (product) => {
     const existingItem = selectedProducts.find((item) => item.product.id === product.id);
@@ -84,30 +85,32 @@ useEffect(() => {
   };
 
   let getData = (paramObj) => {
-      dispatch({ type: "FETCH_REQUEST" })
-      axios
-        .get(`https://clothings.onrender.com/products`, paramObj)
-        .then((res) => {
-          console.log(res);
-          dispatch({ type: "FETCH_SUCCESS", payload: res.data })
-
-        })
-        .catch((err) => {
-          console.log(err)
-          dispatch({ type: "FETCH_FAILURE", payload: err })
-        })
-    }
+    dispatch({ type: "FETCH_REQUEST" })
+    axios
+      .get(`https://clothings.onrender.com/products`, paramObj)
+      .then((res) => {
+        console.log(res);
+        dispatch({ type: "FETCH_SUCCESS", payload: res.data })
+      })
+      .catch((err) => {
+        console.log(err)
+        dispatch({ type: "FETCH_FAILURE", payload: err })
+      })
+  };
 
   if (isLoading) {
     return <div className='animate-ping w-16 h-16 m-28 rounded-full bg-sky-600'></div>
   }
-
+  
   return (
     <div className="product-page">
       <div className="filters">
         <label>
           Sort by:
-          <select value={order} onChange={(e) => setOrder(e.target.value)}>
+          <select
+            value={order}
+            onChange={(e) => setOrder(e.target.value)}
+          >
             <option value=''>Sort by Price</option>
             <option value="asc">Price: Low to High</option>
             <option value="desc">Price: High to Low</option>
@@ -115,8 +118,11 @@ useEffect(() => {
         </label>
         <label>
           Filter by category:
-          <select value={category} onChange={(e) => setCategory(e.target.value)}>
-            <option value=''>All categories</option>
+          <select
+            value={category.length ? category : ''}
+            onChange={(e) => setCategory(e.target.value)}
+          >
+            <option value=''>All Categories</option>
             <option value="men">Men</option>
             <option value="Women">Women</option>
 

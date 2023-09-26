@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Navigate } from "react-router-dom";
 import './Login.css'
+import { AuthContext } from "../components/AuthContext";
 const LoginPage = ({onLogin}) => {
     const [credentials, setCredentials] = useState({ username: '', password: '' });
     const [error, setError] = useState('');
-   const [login, setLogin] = useState(false);
-
+   //const [login, setLogin] = useState(false);
+  const {isAuth, login} = useContext(AuthContext)
     const handleInputChange = (event) => {
       const { name, value } = event.target;
       setCredentials({ ...credentials, [name]: value });
@@ -16,14 +17,14 @@ const LoginPage = ({onLogin}) => {
       const storedCredentials = JSON.parse(localStorage.getItem('credentials'));
       if (storedCredentials && storedCredentials.username === credentials.username && storedCredentials.password === credentials.password) {
         setError('');
-        setLogin(true)
-        alert("Login Successful!")
+        //login()
+        alert("Login Successful!");
         onLogin(storedCredentials.username)
       } else {
         setError('Invalid username or password');
       }
     };
-   if(login){
+   if(isAuth){
     return <Navigate to='/' />
    }
     return (
@@ -44,6 +45,5 @@ const LoginPage = ({onLogin}) => {
       </div>
     );
   };
-
 
 export default LoginPage;

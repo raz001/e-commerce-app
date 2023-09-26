@@ -9,14 +9,17 @@ import {
     useDisclosure,
     Button,
 } from '@chakra-ui/react';
+import { useContext } from 'react';
+import { AuthContext } from './AuthContext';
 
 
 export default function LogoutModal({setUser}) {
     const { isOpen, onOpen, onClose } = useDisclosure();
-
+    const {setIsAuth} = useContext(AuthContext)
     const handleLogout = () => {
         localStorage.removeItem("credentials");
-        setUser('')
+        setIsAuth('');
+        //logout()
         onClose(); 
      }
     return (
