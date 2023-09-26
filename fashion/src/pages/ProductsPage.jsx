@@ -1,10 +1,9 @@
-
 import React, { useState, useEffect, useReducer } from "react";
 import ProductCard from "./ProductCard";
 import "./ProductPage.css";
 import axios from 'axios';
 import { useLocation, useSearchParams } from "react-router-dom";
-
+import { useSnackbar } from 'notistack';
 const initialState = {
   data: [],
   isLoading: false,
@@ -47,7 +46,8 @@ const ProductPage = ({ selectedProducts, setSelectedProducts }) => {
   const initOrder = searchParams.get('order')
   let [order, setOrder] = useState(initOrder || '');
   let [category, setCategory] = useState(initCategory || []);
-  const location = useLocation()
+  const location = useLocation();
+  const { enqueueSnackbar } = useSnackbar()
   const obj = {
     params: {
       category: searchParams.getAll('category'),
@@ -77,10 +77,10 @@ const ProductPage = ({ selectedProducts, setSelectedProducts }) => {
           item.product.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
         )
       );
-      alert('Product quantity increased by 1')
+      enqueueSnackbar('Product quantity increased by 1', { variant: "success" })
     } else {
       setSelectedProducts([...selectedProducts, { product, quantity: 1 }]);
-      alert('Product added to cart')
+      enqueueSnackbar('Product added to cart', { variant: "success" })
     }
   };
 
@@ -99,9 +99,9 @@ const ProductPage = ({ selectedProducts, setSelectedProducts }) => {
   };
 
   if (isLoading) {
-    return <div className='animate-ping w-16 h-16 m-28 rounded-full bg-sky-600'></div>
+     return <div className='animate-ping w-16 h-16 m-28 rounded-full bg-sky-600'></div>
   }
-  
+
   return (
     <div className="product-page">
       <div className="filters">

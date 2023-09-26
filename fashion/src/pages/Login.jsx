@@ -2,11 +2,13 @@ import React, { useContext, useState } from "react";
 import { Navigate } from "react-router-dom";
 import './Login.css'
 import { AuthContext } from "../components/AuthContext";
+import {  useToast } from '@chakra-ui/react';
 const LoginPage = ({onLogin}) => {
     const [credentials, setCredentials] = useState({ username: '', password: '' });
     const [error, setError] = useState('');
    //const [login, setLogin] = useState(false);
-  const {isAuth, login} = useContext(AuthContext)
+   const toast = useToast()
+  const {isAuth} = useContext(AuthContext)
     const handleInputChange = (event) => {
       const { name, value } = event.target;
       setCredentials({ ...credentials, [name]: value });
@@ -17,8 +19,14 @@ const LoginPage = ({onLogin}) => {
       const storedCredentials = JSON.parse(localStorage.getItem('credentials'));
       if (storedCredentials && storedCredentials.username === credentials.username && storedCredentials.password === credentials.password) {
         setError('');
-        //login()
-        alert("Login Successful!");
+        toast({
+          title: 'Login Successful.',
+          description: "You've Successfully logged in.",
+          position: 'top',
+          status: 'success',
+          duration: 3000,
+          isClosable: true,
+        })
         onLogin(storedCredentials.username)
       } else {
         setError('Invalid username or password');
@@ -40,7 +48,7 @@ const LoginPage = ({onLogin}) => {
             <input type="password" id="password" name="password" value={credentials.password} onChange={handleInputChange} />
           </div>
           {error && <div className="error">{error}</div>}
-          <button type="submit" className="btn-submit">Login</button>
+          <button type="submit" className="btn-submit" >Login</button>
         </form>
       </div>
     );

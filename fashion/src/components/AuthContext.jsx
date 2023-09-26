@@ -3,7 +3,7 @@ export const AuthContext = createContext();
 const userData = JSON.parse(localStorage.getItem('credentials')) || '';
 const AuthContextProvider = ({ children }) => {
     const [isAuth, setIsAuth] = useState(userData.username);
-    console.log(isAuth)
+
     const login = () => {
         setIsAuth(true);
     };

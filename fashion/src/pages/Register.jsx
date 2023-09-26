@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { Navigate } from "react-router-dom";
+import { useToast } from '@chakra-ui/react'
 import './Registration.css'
-
 
 const RegistrationPage = () => {
     const [credentials, setCredentials] = useState({ username: '', password: '' });
     const [error, setError] = useState('');
-    const [register, setRegister] = useState(false)
+    const [register, setRegister] = useState(false);
+    const toast = useToast();
+
     const handleInputChange = (event) => {
         const { name, value } = event.target;
         setCredentials({ ...credentials, [name]: value });
@@ -18,19 +20,26 @@ const RegistrationPage = () => {
         if (storedCredentials && storedCredentials.username === credentials.username) {
             setError('Username already taken, Please Login');
         } else {
-            if(credentials.username === "" || credentials.password === ""){
+            if (credentials.username === "" || credentials.password === "") {
                 setError('Please enter asked details');
             } else {
                 localStorage.setItem('credentials', JSON.stringify(credentials));
                 setRegister(true)
-                alert("Registration Successful")
+                toast({
+                    title: 'Registration Successful.',
+                    position: 'top',
+                    description: "Enter the same registered credentials to log in.",
+                    status: 'success',
+                    duration: 9000,
+                    isClosable: true,
+                })
             }
-          
+
         }
     };
- if(register){
-    return <Navigate to='/login' />;
- }
+    if (register) {
+        return <Navigate to='/login' />;
+    }
     return (
         <div className="registration-container">
             <h2>Registration</h2>
@@ -49,8 +58,8 @@ const RegistrationPage = () => {
         </div>
     );
 
-   
-        
+
+
 };
 
 

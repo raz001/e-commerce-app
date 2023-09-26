@@ -1,14 +1,9 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import './CartPage.css';
-import { AuthContext } from "../components/AuthContext";
-
 
 const CartPage = ({ selectedProducts, setSelectedProducts }) => {
     const [cartItems, setCartItems] = useState([]);
-    // console.log('cartitems is', cartItems);
-    // console.log("selectedProducts is", selectedProducts);
-    // const {isAuth} = useContext(AuthContext);
-    // console.log(isAuth)
+
     useEffect(() => {
         setCartItems(selectedProducts);
     }, [selectedProducts]);
