@@ -5,7 +5,7 @@
 </h1>
 
 <h3 align="center">
-	<a href="https://fashion-frenzy-a7a102.netlify.app/">Live URL</a>
+	<a href="https://fashion-frenzy-8b6bc9.netlify.app/">Live URL</a>
 </h3>
   
 <!-- TABLE OF CONTENTS -->
