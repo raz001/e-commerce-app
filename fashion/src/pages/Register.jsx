@@ -30,7 +30,7 @@ const RegistrationPage = () => {
                     position: 'top',
                     description: "Enter the same registered credentials to log in.",
                     status: 'success',
-                    duration: 9000,
+                    duration: 7000,
                     isClosable: true,
                 })
             }
