@@ -12,7 +12,7 @@ const PrivateRoute = ({ children }) => {
             position: 'top',
             description: "To visit cart page, Please register first.",
             status: 'info',
-            duration: 5000,
+            duration: 3000,
             isClosable: true,
         })
         return <Navigate state={location.pathname} to='/account' />

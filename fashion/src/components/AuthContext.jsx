@@ -2,7 +2,7 @@ import React, { createContext, useState } from 'react'
 export const AuthContext = createContext();
 const userData = JSON.parse(localStorage.getItem('credentials')) || '';
 const AuthContextProvider = ({ children }) => {
-    const [isAuth, setIsAuth] = useState(userData.username);
+    const [isAuth, setIsAuth] = useState(userData.firstName);
 
     const login = () => {
         setIsAuth(true);

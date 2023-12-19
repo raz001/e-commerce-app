@@ -31,7 +31,7 @@ function Nav(props) {
 
         {isAuth ? (
           <>
-            <MdAccountCircle style={{ display: "inline", fontSize: '25px', marginLeft: "20px" }} />  {isAuth}
+            <MdAccountCircle style={{ display: "inline", fontSize: '25px', marginLeft: "20px", marginRight:"2px" }} />  {isAuth}
           </>
 
 
