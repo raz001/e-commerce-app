@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useReducer } from "react";
-import ProductCard from "./ProductCard";
+import ProductCard from "../components/ProductCard";
 import "./ProductPage.css";
 import axios from 'axios';
 import { useLocation, useSearchParams } from "react-router-dom";
 import { useSnackbar } from 'notistack';
+import Footer from "../components/Footer";
+
 const initialState = {
   data: [],
   isLoading: false,
@@ -38,7 +40,10 @@ const reducer = (state, action) => {
   }
 
 };
+
 const ProductPage = ({ selectedProducts, setSelectedProducts }) => {
+  const cart_data = JSON.parse(localStorage.getItem('cartItems')) || []
+
   const [searchParams, setSearchParams] = useSearchParams()
   const [state, dispatch] = useReducer(reducer, initialState);
   const { data, isLoading } = state;
@@ -47,7 +52,8 @@ const ProductPage = ({ selectedProducts, setSelectedProducts }) => {
   let [order, setOrder] = useState(initOrder || '');
   let [category, setCategory] = useState(initCategory || []);
   const location = useLocation();
-  const { enqueueSnackbar } = useSnackbar()
+  const { enqueueSnackbar } = useSnackbar();
+
   const obj = {
     params: {
       category: searchParams.getAll('category'),
@@ -65,22 +71,26 @@ const ProductPage = ({ selectedProducts, setSelectedProducts }) => {
       category,
     }
     order && (params.order = order);
+
     if (category === '') delete params.category
     setSearchParams(params);
   }, [category, order]);
 
   const handleAddToCart = (product) => {
-    const existingItem = selectedProducts.find((item) => item.product.id === product.id);
+    const existingItem = cart_data.find((item) => item.id === product.id);
     if (existingItem) {
-      setSelectedProducts(
-        selectedProducts.map((item) =>
-          item.product.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
-        )
-      );
-      enqueueSnackbar('Product quantity increased by 1', { variant: "success" })
+      // setSelectedProducts(
+      //   selectedProducts.map((item) =>
+      //     item.product.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+      //   )
+      // );
+      return enqueueSnackbar('Product already in cart', { variant: "success" })
     } else {
       setSelectedProducts([...selectedProducts, { product, quantity: 1 }]);
       enqueueSnackbar('Product added to cart', { variant: "success" })
+      product.quantity = 1
+      cart_data.push(product)
+      localStorage.setItem('cartItems', JSON.stringify(cart_data))
     }
   };
 
@@ -99,42 +109,46 @@ const ProductPage = ({ selectedProducts, setSelectedProducts }) => {
   };
 
   if (isLoading) {
-     return <div className='animate-ping w-16 h-16 m-28 rounded-full bg-sky-600'></div>
+    return <div className='animate-ping w-16 h-16 m-28 rounded-full bg-sky-600'></div>
   }
 
   return (
-    <div className="product-page">
-      <div className="filters">
-        <label>
-          Sort by:
-          <select
-            value={order}
-            onChange={(e) => setOrder(e.target.value)}
-          >
-            <option value=''>Sort by Price</option>
-            <option value="asc">Price: Low to High</option>
-            <option value="desc">Price: High to Low</option>
-          </select>
-        </label>
-        <label>
-          Filter by category:
-          <select
-            value={category.length ? category : ''}
-            onChange={(e) => setCategory(e.target.value)}
-          >
-            <option value=''>All Categories</option>
-            <option value="men">Men</option>
-            <option value="Women">Women</option>
+    <>
 
-          </select>
-        </label>
+      <div className="product-page">
+        <div className="filters">
+          <label>
+            Sort by:
+            <select
+              value={order}
+              onChange={(e) => setOrder(e.target.value)}
+            >
+              <option value=''>Sort by Price</option>
+              <option value="asc">Price: Low to High</option>
+              <option value="desc">Price: High to Low</option>
+            </select>
+          </label>
+          <label>
+            Filter by category:
+            <select
+              value={category.length ? category : ''}
+              onChange={(e) => setCategory(e.target.value)}
+            >
+              <option value=''>All Categories</option>
+              <option value="men">Men</option>
+              <option value="Women">Women</option>
+
+            </select>
+          </label>
+        </div>
+        <div className="product-grid">
+          {data.map((product) => (
+            <ProductCard key={product.id} product={product} onAddToCart={handleAddToCart} />
+          ))}
+        </div>
       </div>
-      <div className="product-grid">
-        {data.map((product) => (
-          <ProductCard key={product.id} product={product} onAddToCart={handleAddToCart} />
-        ))}
-      </div>
-    </div>
+      <Footer />
+    </>
   );
 };
 

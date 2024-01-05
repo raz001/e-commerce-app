@@ -12,13 +12,14 @@ import {
 import { useContext } from 'react';
 import { AuthContext } from './AuthContext';
 
-export default function LogoutModal({ setUser }) {
+export default function LogoutModal() {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const { setIsAuth } = useContext(AuthContext);
 
     const handleLogout = () => {
         localStorage.removeItem("credentials");
-        setIsAuth('');
+        localStorage.removeItem('cartItems')
+        setIsAuth(false);
         onClose();
     }
     return (

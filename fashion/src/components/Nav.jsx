@@ -8,7 +8,7 @@ import LogoutModal from "./LogoutModal";
 import { AuthContext } from "./AuthContext";
 
 function Nav(props) {
-  const { selectedProducts, user, setUser } = props;
+  const { user, setUser, cart_data } = props;
   const { isAuth } = useContext(AuthContext)
   console.log(isAuth);
 
@@ -26,12 +26,12 @@ function Nav(props) {
         </Link>
         <Link to="/cart" className="navbar__link navbar__link--cart">
           <FaShoppingCart />
-          <span className="navbar__cart-count">{selectedProducts.length}</span>
+          <span className="navbar__cart-count">{cart_data}</span>
         </Link>
 
         {isAuth ? (
           <>
-            <MdAccountCircle style={{ display: "inline", fontSize: '25px', marginLeft: "20px", marginRight:"2px" }} />  {isAuth}
+            <MdAccountCircle style={{ display: "inline", fontSize: '25px', marginLeft: "20px", marginRight: "2px" }} />  {isAuth}
           </>
 
 
