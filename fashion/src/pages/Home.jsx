@@ -1,4 +1,4 @@
-import "./Home.css"
+import "./home.css"
 import Footer from "../components/Footer";
 import CommunitySection from "../components/Community";
 function Home() {
@@ -51,6 +51,18 @@ function Home() {
 
 
                 </div>
+                <div className="top2container">
+                    <img src="https://images.express.com/is/image/expressfashion/0020_01698312_1837_f001?cache=on&wid=361&fmt=jpeg&qlt=75,1&resmode=sharp2&op_usm=1,1,5,0&defaultImage=Photo-Coming-Soon" alt="img" />
+                    <p>
+                        <span>Linen Shirts</span>
+                    </p>
+
+                    <div className='innerdiv'>
+                        <span className="innerp">SHOP NOW</span>
+                    </div>
+
+
+                </div>
             </div>
             <div className="home-container">
   <div className="home-item">
@@ -71,6 +83,12 @@ function Home() {
      <p>$39.99</p>
     {/* <button>Shop Now</button> */}
   </div>
+  <div className="home-item">
+    <img src="https://www.express.com/content/dam/express/2023/projects/web/site-experiences/02-february/0213-digital-23077-style-editor-lp/dt/tan-3col-dt.jpg" alt="Product 1" />
+    <h3>New in Men's</h3>
+    <p>$19.99</p>
+  </div>
+  
 </div>
 
             <CommunitySection />
