@@ -1,4 +1,4 @@
-import "./home.css"
+import "./homePage.css"
 import Footer from "../components/Footer";
 import CommunitySection from "../components/Community";
 function Home() {
